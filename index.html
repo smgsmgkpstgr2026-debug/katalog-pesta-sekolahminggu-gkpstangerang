@@ -74,9 +74,7 @@
 </head>
 <body class="text-simalungun-black antialiased">
 
-    <!-- Header Profesional dengan Tema Simalungun -->
     <header class="relative bg-gradient-to-b from-simalungun-black to-simalungun-red text-white shadow-2xl overflow-hidden z-10 border-b-4 border-simalungun-gold lg:rounded-b-[4rem] md:rounded-b-[3rem] rounded-b-[2rem]">
-        <!-- Ornamen Ulos Background -->
         <div class="absolute inset-0 ornament-bg pointer-events-none"></div>
         
         <div class="max-w-6xl mx-auto px-6 py-12 md:py-16 lg:py-20 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
@@ -101,11 +99,9 @@
             </div>
         </div>
         
-        <!-- Garis Emas Bawah -->
         <div class="absolute bottom-0 left-0 w-full h-1.5 bg-simalungun-gold opacity-80"></div>
     </header>
 
-    <!-- Main Content (Product List) -->
     <main class="max-w-7xl mx-auto px-5 py-10 md:py-14">
         <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-8 md:mb-10 text-center md:text-left border-b border-gray-200 pb-4">
             <div>
@@ -114,7 +110,6 @@
                     Hidangan Istimewa
                 </h2>
                 <p class="text-sm text-gray-500 mt-2 md:pl-11">Pilihan menu khas yang dimasak dengan resep terbaik</p>
-                <!-- Informasi Tambahan Tanggal Pesanan -->
                 <div class="mt-3 md:pl-11">
                     <span class="inline-block bg-simalungun-red/10 text-simalungun-red border border-simalungun-red/20 text-xs md:text-sm font-bold px-3 py-1.5 rounded-md uppercase tracking-wide">
                         PESANAN MAKANAN AKAN DIBERIKAN TANGGAL 24 MEI 2026
@@ -123,13 +118,10 @@
             </div>
         </div>
         
-        <!-- Grid Responsif -->
         <div id="product-list" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-            <!-- Products will be injected here -->
         </div>
     </main>
 
-    <!-- Floating Bottom Bar (Cart Summary) -->
     <div id="floating-cart" class="fixed bottom-0 left-0 w-full glass-nav shadow-[0_-8px_30px_rgba(0,0,0,0.08)] z-40 hidden transition-all duration-300 border-t border-simalungun-gold/20">
         <div class="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
             <div class="flex items-center gap-4">
@@ -148,10 +140,8 @@
         </div>
     </div>
 
-    <!-- Cart Modal Overlay -->
     <div id="cart-overlay" class="fixed inset-0 bg-simalungun-black bg-opacity-70 backdrop-blur-sm z-50 hidden transition-opacity duration-300 opacity-0" onclick="closeCart()"></div>
     
-    <!-- Cart Modal Content -->
     <div id="cart-modal" class="fixed bottom-0 sm:bottom-auto left-0 w-full sm:w-[550px] bg-white rounded-t-[2.5rem] sm:rounded-[2rem] z-50 transform translate-y-full transition-all duration-300 max-h-[90vh] flex flex-col shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-gray-100">
         <div class="w-12 h-1.5 bg-gray-200 rounded-full mx-auto mt-4 mb-2 sm:hidden"></div>
         <div class="w-full flex flex-col h-full overflow-hidden">
@@ -188,7 +178,6 @@
         </div>
     </div>
 
-    <!-- Image Lightbox Modal -->
     <div id="image-modal" class="fixed inset-0 z-[60] hidden flex-col items-center justify-center bg-simalungun-black/95 backdrop-blur-sm p-4 transition-opacity duration-300 opacity-0">
         <button class="absolute top-6 right-6 text-white hover:text-simalungun-red bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors z-10" onclick="closeImageModal()">
             <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -198,53 +187,16 @@
         <div class="absolute inset-0 z-[-1]" onclick="closeImageModal()"></div>
     </div>
 
-    <!-- Script Utama (Keranjang dan Data) -->
     <script>
         const NOMOR_WA_PANITIA = "6281234567890"; 
 
         const products = [
-            {
-                id: 1,
-                name: "Ayam Nabinatur",
-                price: 350000,
-                image: "ayam binatur.jpg",
-                description: "Harga untuk 1 Ekor. Olahan ayam khas dengan rempah pilihan terbaik."
-            },
-            {
-                id: 2,
-                name: "Arsik",
-                price: 200000,
-                image: "arsik.jpg",
-                description: "Harga per Kilogram. Ikan bumbu kuning khas rempah andaliman."
-            },
-            {
-                id: 3,
-                name: "Tombur",
-                price: 220000,
-                image: "tombur.jpg",
-                description: "Harga per Kilogram. Ikan dengan bumbu tombur pedas dan segar."
-            },
-            {
-                id: 4,
-                name: "Saksang",
-                price: 300000,
-                image: "saksang.jpg",
-                description: "Harga per Kilogram. Olahan daging dengan bumbu rempah spesial."
-            },
-            {
-                id: 5,
-                name: "Panggang",
-                price: 350000,
-                image: "panggang.jpg",
-                description: "Harga per Kilogram. Daging panggang lezat dengan bumbu khas."
-            },
-            {
-                id: 6,
-                name: "Parcel Buah",
-                price: 250000,
-                image: "parcelbuah.jpg",
-                description: "Parcel buah segar beraneka ragam yang disusun cantik."
-            }
+            { id: 1, name: "Ayam Nabinatur", price: 350000, image: "ayam binatur.jpg", description: "Harga untuk 1 Ekor. Olahan ayam khas dengan rempah pilihan terbaik." },
+            { id: 2, name: "Arsik", price: 200000, image: "arsik.jpg", description: "Harga per Kilogram. Ikan bumbu kuning khas rempah andaliman." },
+            { id: 3, name: "Tombur", price: 220000, image: "tombur.jpg", description: "Harga per Kilogram. Ikan dengan bumbu tombur pedas dan segar." },
+            { id: 4, name: "Saksang", price: 300000, image: "saksang.jpg", description: "Harga per Kilogram. Olahan daging dengan bumbu rempah spesial." },
+            { id: 5, name: "Panggang", price: 350000, image: "panggang.jpg", description: "Harga per Kilogram. Daging panggang lezat dengan bumbu khas." },
+            { id: 6, name: "Parcel Buah", price: 250000, image: "parcelbuah.jpg", description: "Parcel buah segar beraneka ragam yang disusun cantik." }
         ];
 
         let cart = {};
@@ -312,12 +264,10 @@
 
         function updateUI() {
             renderProducts();
-            
             let totalItems = 0;
             let totalPrice = 0;
             const cartItemsContainer = document.getElementById('cart-items');
             cartItemsContainer.innerHTML = '';
-            
             const cartArray = Object.values(cart);
             
             if (cartArray.length === 0) {
@@ -352,7 +302,6 @@
                     cartItemsContainer.appendChild(itemEl);
                 });
             }
-            
             document.getElementById('floating-count').innerText = totalItems;
             document.getElementById('floating-total').innerText = formatRupiah(totalPrice);
             document.getElementById('modal-total').innerText = formatRupiah(totalPrice);
@@ -363,14 +312,10 @@
             const modal = document.getElementById('cart-modal');
             overlay.classList.remove('hidden');
             const isDesktop = window.innerWidth >= 640;
-            
             setTimeout(() => {
                 overlay.classList.remove('opacity-0');
-                if(isDesktop) {
-                    modal.classList.add('modal-active');
-                } else {
-                    modal.classList.remove('translate-y-full');
-                }
+                if(isDesktop) { modal.classList.add('modal-active'); } 
+                else { modal.classList.remove('translate-y-full'); }
             }, 10);
         }
 
@@ -378,13 +323,9 @@
             const overlay = document.getElementById('cart-overlay');
             const modal = document.getElementById('cart-modal');
             const isDesktop = window.innerWidth >= 640;
-            
             overlay.classList.add('opacity-0');
-            if(isDesktop) {
-                modal.classList.remove('modal-active');
-            } else {
-                modal.classList.add('translate-y-full');
-            }
+            if(isDesktop) { modal.classList.remove('modal-active'); } 
+            else { modal.classList.add('translate-y-full'); }
             setTimeout(() => { overlay.classList.add('hidden'); }, 300);
         }
 
@@ -409,10 +350,15 @@
             message += `---------------------------\n`;
             
             let total = 0;
+            let orderItems = []; // Array untuk menyimpan detail pesanan ke Database
+
             cartArray.forEach(item => {
                 const subtotal = item.price * item.quantity;
                 total += subtotal;
                 message += `▪️ ${item.quantity}x ${item.name}\n`;
+                
+                // Masukkan data produk ke dalam array untuk dikirim ke Dashboard
+                orderItems.push({ name: item.name, qty: item.quantity });
             });
             
             message += `---------------------------\n`;
@@ -420,11 +366,11 @@
             message += `Diateitupa. 🙏`;
 
             const encodedMessage = encodeURIComponent(message);
-            const waUrl = `https://wa.me/${+6281292333006}?text=${encodedMessage}`;
+            const waUrl = `https://wa.me/${NOMOR_WA_PANITIA}?text=${encodedMessage}`;
             
-            // Panggil script pelacakan Firebase (jika tersedia), atau langsung buka WA
+            // Panggil script pelacakan Firebase (jika tersedia), kirimkan array orderItems
             if (window.trackCheckoutClick) {
-                window.trackCheckoutClick(name, total, waUrl);
+                window.trackCheckoutClick(name, total, waUrl, orderItems);
             } else {
                 window.location.href = waUrl;
             }
@@ -434,12 +380,10 @@
             const modal = document.getElementById('image-modal');
             const img = document.getElementById('lightbox-img');
             const title = document.getElementById('lightbox-title');
-            
             img.src = imgSrc;
             title.innerText = imgName;
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
                 img.classList.remove('scale-95');
@@ -450,11 +394,9 @@
         function closeImageModal() {
             const modal = document.getElementById('image-modal');
             const img = document.getElementById('lightbox-img');
-            
             modal.classList.add('opacity-0');
             img.classList.remove('scale-100');
             img.classList.add('scale-95');
-            
             setTimeout(() => {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
@@ -464,14 +406,11 @@
         renderProducts();
     </script>
 
-    <!-- SCRIPT FIREBASE TERPISAH (Agar terhubung ke Dashboard Panitia) -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         try {
-            // Konfigurasi Database Milik Anda Sendiri
             const firebaseConfig = {
               apiKey: "AIzaSyBMVWejpCQhFYJFDn7vWbFPisXXhVfvwvE",
               authDomain: "dana-sekolah-minggu.firebaseapp.com",
@@ -483,48 +422,35 @@
             };
             
             const app = initializeApp(firebaseConfig);
-            // Nonaktifkan Auth karena menyebabkan error configuration-not-found
-            // const auth = getAuth(app);
             const db = getFirestore(app);
-            const customAppId = "pesta-sekolah-minggu"; // App ID unik
+            const customAppId = "pesta-sekolah-minggu";
             
-            // Hapus blok initAuth dan onAuthStateChanged karena Auth menyebabkan error
-            // let currentUser = null;
-            // const initAuth = async () => { ... };
-            // initAuth();
-            // onAuthStateChanged(auth, ... );
-
-            // Daftarkan fungsi ke window agar bisa dipanggil oleh fungsi checkoutWA()
-            window.trackCheckoutClick = async function(buyerName, totalAmount, redirectUrl) {
-                if (db) { // Kita langsung cek database saja
+            // Menerima parameter itemsArray dari fungsi CheckoutWA
+            window.trackCheckoutClick = async function(buyerName, totalAmount, redirectUrl, itemsArray) {
+                if (db) { 
                     try {
                         const trackingRef = collection(db, 'artifacts', customAppId, 'public', 'data', 'checkouts');
-                        // Simpan data klik ke database Firebase secara langsung (tanpa Auth)
+                        // Simpan data klik ke database Firebase beserta Detail Produknya
                         await addDoc(trackingRef, {
                             name: buyerName,
                             amount: totalAmount,
+                            items: itemsArray || [], // Menyimpan pesanan ke database
                             timestamp: Date.now()
                         });
-                        console.log("Klik berhasil dicatat di Firestore.");
                     } catch (e) {
                         console.error("Error logging click:", e);
                     }
-                } else {
-                    console.warn("Database tidak tersedia untuk pencatatan klik.");
-                }
-                // Setelah dicatat (atau gagal dicatat), otomatis buka WhatsApp
+                } 
                 window.location.href = redirectUrl;
             };
         } catch (e) {
             console.error("Firebase Init Error:", e);
-            // Fallback: pastikan WA tetap terbuka meskipun Firebase gagal total
             if (!window.trackCheckoutClick) {
-                window.trackCheckoutClick = function(buyerName, totalAmount, redirectUrl) {
+                window.trackCheckoutClick = function(buyerName, totalAmount, redirectUrl, itemsArray) {
                      window.location.href = redirectUrl;
                 }
             }
         }
     </script>
-
 </body>
 </html>
