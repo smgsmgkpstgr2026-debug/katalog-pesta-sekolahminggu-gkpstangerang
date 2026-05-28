@@ -329,17 +329,19 @@
             setTimeout(() => { overlay.classList.add('hidden'); }, 300);
         }
 
-        function checkoutWA() {
-            const nameInput = document.getElementById('buyer-name');
-            const errorMsg = document.getElementById('error-msg');
-            const name = nameInput.value.trim();
+       function checkoutWA() {
+            // Menampilkan pesan pop-up kepada user
+            alert("Pesta Sudah Berakhir");
             
-            if (!name) {
-                errorMsg.classList.remove('hidden');
-                nameInput.classList.add('border-simalungun-red', 'ring-2', 'ring-simalungun-red/20');
-                nameInput.focus();
-                return;
+            // (Opsional) Mengubah tampilan tombol menjadi abu-abu dan tidak bisa diklik lagi
+            const checkoutBtn = document.querySelector('button[onclick="checkoutWA()"]');
+            if(checkoutBtn) {
+                checkoutBtn.innerHTML = "Pesta Sudah Berakhir";
+                checkoutBtn.classList.remove('bg-[#25D366]', 'hover:bg-[#1DA851]');
+                checkoutBtn.classList.add('bg-gray-400', 'cursor-not-allowed');
+                checkoutBtn.disabled = true;
             }
+        }
             
             errorMsg.classList.add('hidden');
             nameInput.classList.remove('border-simalungun-red', 'ring-2', 'ring-simalungun-red/20');
