@@ -329,52 +329,17 @@
             setTimeout(() => { overlay.classList.add('hidden'); }, 300);
         }
 
-       function checkoutWA() {
+        function checkoutWA() {
             // Menampilkan pesan pop-up kepada user
             alert("Pesta Sudah Berakhir");
             
-            // (Opsional) Mengubah tampilan tombol menjadi abu-abu dan tidak bisa diklik lagi
+            // Mengubah tampilan tombol menjadi abu-abu dan tidak bisa diklik lagi
             const checkoutBtn = document.querySelector('button[onclick="checkoutWA()"]');
             if(checkoutBtn) {
                 checkoutBtn.innerHTML = "Pesta Sudah Berakhir";
                 checkoutBtn.classList.remove('bg-[#25D366]', 'hover:bg-[#1DA851]');
                 checkoutBtn.classList.add('bg-gray-400', 'cursor-not-allowed');
                 checkoutBtn.disabled = true;
-            }
-        }
-            
-            errorMsg.classList.add('hidden');
-            nameInput.classList.remove('border-simalungun-red', 'ring-2', 'ring-simalungun-red/20');
-
-            let cartArray = Object.values(cart);
-            let message = `Horas Panitia! Saya ingin memesan menu Pesta Sekolah Minggu '24 Mei 2026'.\n\n`;
-            message += `*Pemesan / No Telp:* ${name}\n`;
-            message += `---------------------------\n`;
-            
-            let total = 0;
-            let orderItems = []; // Array untuk menyimpan detail pesanan ke Database
-
-            cartArray.forEach(item => {
-                const subtotal = item.price * item.quantity;
-                total += subtotal;
-                message += `▪️ ${item.quantity}x ${item.name}\n`;
-                
-                // Masukkan data produk ke dalam array untuk dikirim ke Dashboard
-                orderItems.push({ name: item.name, qty: item.quantity });
-            });
-            
-            message += `---------------------------\n`;
-            message += `*Total Pembayaran: ${formatRupiah(total)}*\n\n`;
-            message += `Diateitupa. 🙏`;
-
-            const encodedMessage = encodeURIComponent(message);
-            const waUrl = `https://wa.me/${+6281292333006}?text=${encodedMessage}`;
-            
-            // Panggil script pelacakan Firebase (jika tersedia), kirimkan array orderItems
-            if (window.trackCheckoutClick) {
-                window.trackCheckoutClick(name, total, waUrl, orderItems);
-            } else {
-                window.location.href = waUrl;
             }
         }
 
